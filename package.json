@@ -1,0 +1,31 @@
+{
+  "name": "primerservidor",
+  "version": "1.0.0",
+  "description": "Prueba de la clase de DRAW",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/a301377/DRAW-Primer-Servidor.git"
+  },
+  "keywords": [
+    "fing",
+    "draw",
+    "servidor",
+    "prueba",
+    "is",
+    "uach"
+  ],
+  "author": "Andree",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/a301377/DRAW-Primer-Servidor/issues"
+  },
+  "homepage": "https://gitlab.com/a301377/DRAW-Primer-Servidor#README",
+  "dependencies": {
+    "log4js": "^2.5.3",
+    "nodemon": "^1.14.12"
+  }
+}

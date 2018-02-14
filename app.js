@@ -1,6 +1,12 @@
 const http = require('http');
 //FS = File System
 const fs = require('fs');
+//log4js
+const log4js = require('log4js');
+
+const logger = log4js.getLogger();
+
+logger.level = "debug";
 
 // Lectura de archivo sincrona
 //let file = fs.readFileSync("./index.html");
@@ -9,14 +15,19 @@ const fs = require('fs');
 //Se hizo en ECMAS6 para no escribir muchas veces la palabra flecha
 http.createServer((request, response)=>{
   //Lectura Asincrona
-  fs.readFile('./index1.html', (err, html)=>{
+  fs.readFile('./index.html', (err, suc)=>{
+    logger.info("Conexión con servidor");
     if(err){
+      logger.warn("404");
       //WriteHead Es la cabecera recive el codigo de estatus y el tipo de archivo
-      response.writeHead(404, {'Content-Type':'text/html'});
-      response.write("fallo");
+      response.writeHead(404, {
+        'Content-Type':'text/html'
+      });
+      response.write("404 - Not Found!!");
       response.end();
     }else{
-      response.write(html);
+      logger.info("Exito");
+      response.write(suc);
       response.end();
     }
   });
